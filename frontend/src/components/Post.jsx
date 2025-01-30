@@ -60,7 +60,7 @@ const Post = ({ post }) => {
   const commentHandler = async () => {
     try {
 
-      const res = await axios.post(`http://localhost:8000/api/v1/post/${post._id}/comment`, { text }, {
+      const res = await axios.post(`https://instaclone-ilgd.onrender.com/api/v1/post/${post._id}/comment`, { text }, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -86,7 +86,7 @@ const Post = ({ post }) => {
 
   const deletePostHandler = async () => {
     try {
-      const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${post?._id}`, { withCredentials: true })
+      const res = await axios.delete(`https://instaclone-ilgd.onrender.com/api/v1/post/delete/${post?._id}`, { withCredentials: true })
       console.log(res);
       console.log(res.status);
 
@@ -104,9 +104,9 @@ const Post = ({ post }) => {
   const bookmarkHandler = async () => {
 
     try {
-      const res = await axios.get(`http://localhost:8000/api/v1/post/${post?._id}/bookmark`, {withCredentials: true})
-      console.log(res.data,'bookmark')
-      if(res.data.success){
+      const res = await axios.get(`https://instaclone-ilgd.onrender.com/api/v1/post/${post?._id}/bookmark`, { withCredentials: true })
+      console.log(res.data, 'bookmark')
+      if (res.data.success) {
         toast.success(res.data.message)
       }
     } catch (error) {
@@ -134,13 +134,13 @@ const Post = ({ post }) => {
           </DialogTrigger>
           <DialogContent className="flex flex-col items-center text-sm text-center">
             {
-              post?.author?._id !== user?._id && 
+              post?.author?._id !== user?._id &&
               <Button
-              variant="ghost"
-              className="cursor-pointer w-fit text-[#ED4956] font-bold"
-            >
-              Unfollow
-            </Button>}
+                variant="ghost"
+                className="cursor-pointer w-fit text-[#ED4956] font-bold"
+              >
+                Unfollow
+              </Button>}
             <Button variant="ghost" className="cursor-pointer w-fit">
               Add to favourite
             </Button>

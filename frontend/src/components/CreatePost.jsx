@@ -39,7 +39,7 @@ const CreatePost = ({ open, setOpen }) => {
 
         try {
             setLoadin(true)
-            const res = await axios.post("http://localhost:8000/api/v1/post/addpost", formData,{
+            const res = await axios.post("https://instaclone-ilgd.onrender.com/api/v1/post/addpost", formData,{
                 headers:{
                     'Content-Type': 'mutipart/form-data'
                 },

@@ -12,6 +12,7 @@ dotenv.config({});
 
 const PORT = process.env.PORT || 3000;
 
+
 const __dirname = path.resolve();
 app.get('/', (_,res)=>{
     return res.status(200).json({
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({extended: true}));
 const corseOptions={
-    origin: 'http://localhost:5173',
+    origin: process.env.URL,
     credentials:true
 }
 app.use(cors(corseOptions));
