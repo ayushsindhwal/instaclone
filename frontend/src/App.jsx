@@ -2,7 +2,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import MainLayout from './components/MainLayout';
 import Profile from './components/Profile';
-import Signup from './components/signup'
+import Signup from './components/Signup'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Toaster } from './components/ui/sonner';
 import EditProfile from './components/EditProfile';
